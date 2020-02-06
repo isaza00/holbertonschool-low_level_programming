@@ -1,6 +1,8 @@
 #include <stdlib.h>
 #include <time.h>
-/* more headers goes there */
+/**
+* prints if random number is positive or negative
+*/
 
 /* betty style doc for function main goes there */
 int main(void)
@@ -10,10 +12,10 @@ int main(void)
 	srand(time(0));
 	n = rand() - RAND_MAX / 2;
 	if (n > 0)
-		printf("%f is positive", n);
+		printf("%lld id positive", n);
 	else if (n < 0)
-		printf("%f is negative", n);
+		printf("%lld is negative", n);
 	else
-		printf("%f is zero", n);
+		printf("%lld is zero", n);
 	return (0);
 }
