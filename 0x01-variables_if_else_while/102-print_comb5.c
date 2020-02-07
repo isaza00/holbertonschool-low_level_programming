@@ -17,7 +17,7 @@ int main(void)
 		{
 			for (k = 0; k <= 9; k++)
 			{
-				for(m = 0; m <= 9; m++)
+				for (m = 0; m <= 9; m++)
 				{
 					if (m > j && k >= i)
 					{
@@ -26,14 +26,14 @@ int main(void)
 						putchar(' ');
 						putchar(k + '0');
 						putchar(m + '0');
-						if (!(i == 9 && j == 8 && k == 9 && m == 9))
-						{						
+						if (!(i == 9 && j == 8 && k == 9 && m == 9)
+						{
 							putchar(',');
 							putchar(' ');
 						}
-					} 
+					}
 				}
-			}			
+			}
 		}
 	}
 	putchar('\n');
