@@ -19,14 +19,14 @@ int main(void)
 			{
 				for (m = 0; m <= 9; m++)
 				{
-					if (m > j && k >= i)
-					{
+				if ((k > i) || (k == i && m > j))
+				{
 					putchar(i + '0');
 					putchar(j + '0');
 					putchar(' ');
 					putchar(k + '0');
 					putchar(m + '0');
-					if (!(i == 9 && j == 8 && k == 9 && m == 9)
+					if (!(i == 9 && j == 8 && k == 9 && m == 9))
 					{
 						putchar(',');
 						putchar(' ');
