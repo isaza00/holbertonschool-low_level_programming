@@ -21,16 +21,16 @@ int main(void)
 				{
 					if (m > j && k >= i)
 					{
-						putchar(i + '0');
-						putchar(j + '0');
+					putchar(i + '0');
+					putchar(j + '0');
+					putchar(' ');
+					putchar(k + '0');
+					putchar(m + '0');
+					if (!(i == 9 && j == 8 && k == 9 && m == 9)
+					{
+						putchar(',');
 						putchar(' ');
-						putchar(k + '0');
-						putchar(m + '0');
-						if (!(i == 9 && j == 8 && k == 9 && m == 9)
-						{
-							putchar(',');
-							putchar(' ');
-						}
+					}
 					}
 				}
 			}
