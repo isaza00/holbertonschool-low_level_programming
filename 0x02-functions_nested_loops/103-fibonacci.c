@@ -13,8 +13,7 @@ int main(void)
 	long int total = 2;
 
 	for (i = 0; i <= 47; i++)
-	{	
-		
+	{
 		new = sum_ant + sum_new;
 		if (new < 4000000)
 		{
