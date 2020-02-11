@@ -10,7 +10,7 @@ int main(void)
 	long int sum_ant = 1;
 	long int sum_new = 2;
 	long int new = 2;
-	long int total = 0;
+	long int total = 2;
 
 	for (i = 0; i <= 47; i++)
 	{	
