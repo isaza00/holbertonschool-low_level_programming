@@ -17,9 +17,9 @@ void print_times_table(int n)
 		for (j = 0; j <= n; j++)
 		{
 			res = i * j;
-			if ((res == 0) && (j == 0))
+			if (j == 0)
 				_putchar(res + '0');
-			if (res < 10)
+			else if ((res < 10) && (j != 0))
 			{
 				_putchar(' ');
 				_putchar(' ');
