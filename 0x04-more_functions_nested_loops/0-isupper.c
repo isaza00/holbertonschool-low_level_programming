@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * _isdigit - isdigit
+ * _isupper - isdigit
  * @c: integer
  * Return: prints alphabet
  */
