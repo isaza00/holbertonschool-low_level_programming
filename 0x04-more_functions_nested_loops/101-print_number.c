@@ -21,8 +21,12 @@ void print_number(int n)
 		digits++;
 	}
 	sum = reverse(n, digits);
-	if (sum == 0)
+	if (sum <= 10)
+	{
+		if (n < 0)
+			_putchar('-');
 		_putchar(sum + '0');
+	}
 	else
 	{
 		if (n < 0)
@@ -52,6 +56,8 @@ int reverse(int n, int digits)
 		number = n;
 	else
 		number = n * -1;
+	if (number < 10)
+		return (number);
 	for (i = (digits - 1); i > 0; i--)
 	{
 		residuo = number % 10;
@@ -62,5 +68,6 @@ int reverse(int n, int digits)
 		if (number < 10)
 			sum += number;
 	}
+	printf("NUMERO RESERVE SIN SIGNO %d", sum);
 	return (sum);
 }
