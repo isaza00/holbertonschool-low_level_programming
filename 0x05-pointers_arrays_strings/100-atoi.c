@@ -10,6 +10,7 @@ int _atoi(char *s)
 	int menos = 1;
 	int number = 0;
 	int found = 0;
+	int salida = 0;
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
@@ -23,5 +24,6 @@ int _atoi(char *s)
 			found = 1;
 		}
 	}
-	return (number * menos);
+	salida = number * menos;
+	return (salida);
 }
