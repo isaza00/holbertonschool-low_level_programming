@@ -23,7 +23,7 @@ int _atoi(char *s)
 			found = 1;
 		}
 	}
-	if (menos % 2 != 0)
-		number = number * -1;
-	return (number);
+	if (menos % 2 == 0)
+		return (number);
+	return (number * -1);
 }
