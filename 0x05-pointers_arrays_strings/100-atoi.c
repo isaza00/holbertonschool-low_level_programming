@@ -14,8 +14,12 @@ int _atoi(char *s)
 	for (i = 0; s[i] != '\0'; i++)
 	{
 		if (found == 1)
-			if (!(s[i] >= '0' && s[i] <= '9'))
+			{
+			if (s[i] >= '0' && s[i] <= '9')
+				found = 1;
+			else
 				found = 2;
+			}
 		if (found != 2)
 		{
 		if (s[i] == '-')
@@ -28,6 +32,6 @@ int _atoi(char *s)
 		}
 		}
 	}
-		number *= menos;
+	number *= menos;
 	return (number);
 }
