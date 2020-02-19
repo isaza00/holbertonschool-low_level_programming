@@ -24,6 +24,8 @@ int _atoi(char *s)
 			found = 1;
 		}
 	}
+	if ((s[i] == '\0') && (found = 0))
+		number = 0;
 	salida = number * menos;
 	return (salida);
 }
