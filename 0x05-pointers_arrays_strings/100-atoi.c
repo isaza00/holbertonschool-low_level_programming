@@ -8,7 +8,7 @@ int _atoi(char *s)
 {
 	int i = 0;
 	int menos = 1;
-	int number = 0;
+	int n = 0;
 	int found = 0;
 
 	for (i = 0; s[i] != '\0'; i++)
@@ -26,12 +26,12 @@ int _atoi(char *s)
 			menos *= -1;
 		if (s[i] >= '0' && s[i] <= '9')
 		{
-			number *= 10;
-			number += s[i] - '0';
+			n *= 10;
+			n += s[i] - '0';
 			found = 1;
 		}
 		}
 	}
-	number *= menos;
-	return (number);
+	n *= menos;
+	return (n);
 }
