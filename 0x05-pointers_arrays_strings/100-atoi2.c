@@ -9,21 +9,19 @@ int _atoi(char *s)
 	int i = 0;
 	int menos = 1;
 	int number = 0;
-	int found = 0;
 	int salida = 0;
 
-	for (i = 0; s[i] != '\0'; i++)
+	for (i = 0; (!(s[i] >= '0' && s[i] <= '9')); i++)
 	{
-		if (found == 1 && (!(s[i] >= '0' && s[i] <= '9')))
-			break;
 		if (s[i] == '-')
 			menos *= -1;
-		if (s[i] >= '0' && s[i] <= '9')
-		{
-			number *= 10;
-			number += s[i] - '0';
-			found = 1;
-		}
+	}
+	i = 0;
+	while (s[i] >= '0' && s[i] <= '9')
+	{
+		number *= 10;
+		number += s[i] - '0';
+		i++;
 	}
 	salida = number * menos;
 	return (salida);
