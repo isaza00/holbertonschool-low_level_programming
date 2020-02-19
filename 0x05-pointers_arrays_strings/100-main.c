@@ -28,5 +28,8 @@ int main(void)
     printf("%d\n", n);
     n = _atoi("");
     printf("%d\n", n);
+    n = _atoi("1");
+    printf("%d\n", n);
+
 return (0);
 }
