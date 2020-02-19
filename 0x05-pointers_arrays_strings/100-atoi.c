@@ -13,16 +13,19 @@ int _atoi(char *s)
 
 	for (i = 0; s[i] != '\0'; i++)
 	{
-		if (!(found == 1 && (!(s[i] >= '0' && s[i] <= '9'))))
+		if (found == 1)
+			if (!(s[i] >= '0' && s[i] <= '9'))
+				found = 2;
+		if (found != 2)
 		{
-			if (s[i] == '-')
-				menos++;
-			if (s[i] >= '0' && s[i] <= '9')
-			{
-				number *= 10;
-				number += s[i] - '0';
-				found = 1;
-			}
+		if (s[i] == '-')
+			menos++;
+		if (s[i] >= '0' && s[i] <= '9')
+		{
+			number *= 10;
+			number += s[i] - '0';
+			found = 1;
+		}
 		}
 	}
 	if (menos % 2 != 0)
