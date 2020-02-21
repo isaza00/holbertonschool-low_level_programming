@@ -15,13 +15,10 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	int len2 = 0;
 	int l1 = 0;
 	int l2 = 0;
-	int suma = 0;
-	int llevo = 0;
-	int s1 = 0;
-	int s2 = 0;
+	char *resultado;
 
 	void rev_string(char *s);
-	
+	char *calculadora(char *, char *, char *, int, int, int);
 	for (i = 0; n1[i] != '\0'; i++)
 		len1++;
 	for (i = 0; n2[i] != '\0'; i++)
@@ -32,11 +29,31 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 		l2 = len2 + 1;
 	}
 	else
-	{	
+	{
 		l1 = len2 + 1;
 		l2 = len1 + 1;
 	}
-	
+	resultado = calculadora(n1, n2, r, l1, l2, size_r);
+	if (resultado == 0)
+		return (0);	
+	r[i] = '\0';
+	rev_string(r);
+	return (r);
+}
+
+/**
+ * rev_string - isdigit
+ * @s
+ * Return: prints alphabet
+ */
+char *calculadora(char *n1, char *n2, char *r, int l1, int l2, int size_r)
+{
+	int i = 0;
+	int suma = 0;
+	int llevo = 0;
+	int s1 = 0;
+	int s2 = 0;
+
 	for (i = 0; (i <= (l1 - 2)) || (llevo == 1); i++)
 	{
 		if ((l2 - 2 - i) >= 0)
@@ -50,16 +67,10 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
     		suma = s1 + s2 + llevo;
     		llevo = suma / 10;
 		if (i < (size_r - 1))
-		{
 	    		r[i] = (suma % 10) + '0';
-		}
 		else
-		{
 			return (0);
-		} 
 	}
-    	r[i] = '\0';
-	rev_string(r);
 	return (r);
 }
 /**
