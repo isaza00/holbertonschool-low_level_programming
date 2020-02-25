@@ -9,21 +9,19 @@
 void print_diagsums(int *a, int size)
 {
 	int i = 0;
-	int j = 0;
+	int final = 0;
 	int diag1 = 0;
 	int diag2 = 0;
-	
-	for(i = 0; i <= size; i++)
+
+	final = ((size * size) - 1);
+	for (i = 0; i <= final; i += (size + 1))
 	{
-		for(j = 0; j <= size; j++)
-		{
-			if (i == j)
-			{
-				diag1 += a[i][j];
-			}
-			if (i == (size - j) && j == (size - i))
-				diag2 += a[i][j];
-		}
+
+		diag1 = diag1 + a[i];
 	}
-	printf("%i, %i\n", diag1, diag2)	
+	for (i = (size - 1); i <= (final - 1); i += (size - 1))
+	{
+		diag2 = diag2 + a[i];
+	}
+	printf("%d, %d\n", diag1, diag2);
 }
