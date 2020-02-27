@@ -1,7 +1,8 @@
 #include "holberton.h"
 /**
- * is_prime_number - isdigit
+ * prime_mine - isdigit
  * @n: integer
+ * @inc: integer
  * Return: prints alphabet
  */
 int prime_mine(int n, int inc)
@@ -12,6 +13,11 @@ int prime_mine(int n, int inc)
 		return (1);
 	return (prime_mine(n, inc + 1));
 }
+/**
+ * is_prime_number - isdigit
+ * @n: integer
+ * Return: prints alphabet
+ */
 int is_prime_number(int n)
 {
 	int inc = 2;
