@@ -11,7 +11,7 @@ int main(int argc, char *argv[])
 {
 	int i = 0;
 	int j = 0;
-	int sum = 1;
+	int sum = 0;
 
 	int isdigit(int c);
 	if (argc < 2)
