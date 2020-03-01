@@ -1,38 +1,59 @@
-#include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
 /**
- * min_coins - check the code for Holberton School students.
- * @cents: integer
- * @i: array
- * Return: Always 0.
+ * change - get change
+ * @cents: amount of coins from main function
+ * Return: change
  */
-int min_coins(int cents, int i)
+int change(int cents)
 {
-	int coins[] = {25, 10, 5, 2, 1};
+	int q = 25, d = 10, n = 5, t = 2, p = 1;
+	int coins;
 
-	if (cents == 0)
-		return (0);
-	if (cents >= coins[i])
+	while (cents > 0)
 	{
-		return (1 + min_coins(cents - coins[i], i));
+		while (cents >= q)
+		{
+			cents -= q;
+			coins++;
+		}
+		while (cents >= d)
+		{
+			cents -= d;
+			coins++;
+		}
+		while (cents >= n)
+		{
+			cents -= n;
+			coins++;
+		}
+		while (cents >= t)
+		{
+			cents -= t;
+			coins++;
+		}
+		while (cents >= p)
+		{
+			cents -= p;
+			coins++;
+		}
 	}
-	return (min_coins(cents, i + 1));
+	return (coins);
 }
 /**
- * main - check the code for Holberton School students.
- * @argc: integer
- * @argv: array
- * Return: Always 0.
+ * main - get change
+ * @argc: amount of coins from main function
+ * @argv: arguments
+ * Return: change
  */
 int main(int argc, char *argv[])
 {
 	int cents = 0;
-	int i = 0;
 
+	int change(int cents);
 	if (argc != 2)
 	{
-		puts("Error");
+		printf("%s\n", "Error");
 		return (1);
 	}
 	cents = atoi(argv[1]);
@@ -41,8 +62,7 @@ int main(int argc, char *argv[])
 		puts("0");
 		return (0);
 	}
-	printf("%d\n", min_coins(cents, i));
+	printf("%d\n", change(cents));
 	return (0);
 }
-
 
