@@ -1,30 +1,40 @@
 #include "holberton.h"
 #include <stdlib.h>
 /**
- * alloc_grid - isdigit
- * @width: integer
- * @height: integer
+ * argstostr - isdigit
+ * @ac: integer
+ * @av: integer
  * Return: prints alphabet
  */
-int **alloc_grid(int width, int height)
+char *argstostr(int ac, char **av)
 {
-        int **arr = (int **)malloc(height * sizeof(int *));
-        int i = 0;
-        int j = 0;
+	char *s;
+	int i = 0;
+	int j = 0;
+	int k = 0;
+	int len = 0;
 
-        if (arr == NULL)
-                return (NULL);
-        for (i = 0; i < height; i++)
-        {
-                arr[i] = (int *)malloc(width * sizeof(int));
-                if (arr[i] == NULL)
-                        return (NULL);
-        }
-
-        for (i = 0; i < height; i++)
-        {
-                for (j = 0; j < width; j++)
-                        arr[i][j] = 0;
-        }
-        return (arr);
+	int _putchar(char);
+	if (ac == 0 || av == NULL)
+		return (NULL);
+	for (i = 0; i < ac; i++)
+	{
+		for (j = 0; av[i][j]; j++)
+			len++;
+	}
+	s = malloc(len * sizeof(char));
+	if (s == NULL)
+		return (NULL);
+	for (i = 0; i < ac; i++)
+	{
+		for (j = 0; av[i][j] != '\0'; j++)
+		{
+			s[k] = av[i][j];
+			k++;
+		}
+		if (s[k] == '\0')
+			s[k++] = '\n';
+	}
+	return (s);
 }
+
