@@ -22,7 +22,7 @@ char *argstostr(int ac, char **av)
 		for (j = 0; av[i][j]; j++)
 			len++;
 	}
-	s = malloc(len * sizeof(char + 1));
+	s = malloc(len * sizeof(char) + 1);
 	if (s == NULL)
 		return (NULL);
 	for (i = 0; i < ac; i++)
