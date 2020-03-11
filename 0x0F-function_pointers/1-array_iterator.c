@@ -5,11 +5,10 @@
  * @array: integer
  * @size: integer
  * @action: integer
- * Return: prints alphabet
  */
 void array_iterator(int *array, size_t size, void (*action)(int))
 {
-	if (!array || !action)
+	if (!array || !action || size == 0)
 		return;
 	size_t i = 0;
 
