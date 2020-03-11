@@ -15,4 +15,5 @@ int main(int argsc, char *argsv[])
 		exit(98);
 	}
 	printf("%i\n", get_op_func(argsv[2])(atoi(argsv[1]), atoi(argsv[3])));
+	return (0);
 }
