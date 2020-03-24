@@ -2,10 +2,9 @@
 #include "lists.h"
 
 /**
- * insert_nodeint_at_index - isdigit
+ * delete_nodeint_at_index - isdigit
  * @head: integer
- * @idx: integer
- * @n: integer
+ * @index: integer
  * Return: prints alphabet
  */
 

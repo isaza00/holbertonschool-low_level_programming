@@ -2,12 +2,10 @@
 #include "lists.h"
 
 /**
- * get_nodeint_at_index - isdigit
+ * sum_listint - isdigit
  * @head: integer
- * @index: integer
  * Return: prints alphabet
  */
-
 int sum_listint(listint_t *head)
 {
 	size_t i = 0;
@@ -23,3 +21,4 @@ int sum_listint(listint_t *head)
 	}
 	return (i);
 }
+
