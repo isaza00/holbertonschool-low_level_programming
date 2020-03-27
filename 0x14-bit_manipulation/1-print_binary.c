@@ -11,14 +11,8 @@ void rec(int res)
 		rec(res >> 1);
 		_putchar((res & 1) + '0');
 	}
-	return;
-	
 }
-/**
- * print_binary - isdigit
- * @n: integer
- * Return: prints alphabet
- */
+
 void print_binary(unsigned long int n)
 {
 	if (n == 0)
