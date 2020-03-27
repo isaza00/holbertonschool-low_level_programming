@@ -12,7 +12,7 @@ int set_bit(unsigned long int *n, unsigned int index)
 	unsigned int i = 0;
 	unsigned long int bit = 1, m = 0;
 
-	if (index > 63)
+	if (index > 31)
 		return (-1);
 	if (index == 0)
 	{
