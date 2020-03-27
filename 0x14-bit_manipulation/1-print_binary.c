@@ -4,7 +4,7 @@
  * @res: integer
  * Return: prints alphabet
  */
-void rec(int res)
+void rec(unsigned long int res)
 {
 	if (res > 0)
 	{

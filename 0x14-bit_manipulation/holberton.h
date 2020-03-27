@@ -2,7 +2,7 @@
 #define HOLBERTON_H
 
 int _putchar(char);
-void rec(int res);
+void rec(unsigned long int res);
 unsigned int exptwo(unsigned int pos);
 unsigned int binary_to_uint(const char *b);
 void print_binary(unsigned long int n);
