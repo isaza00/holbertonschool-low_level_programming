@@ -1,5 +1,3 @@
-#include <stdlib.h>
-#include <stdio.h>
 #include "holberton.h"
 /**
  * rec - isdigit
@@ -8,12 +6,13 @@
  */
 void rec(int res)
 {
-	if (res == 0)
+	if (res > 0)
 	{
-		return;
+		rec(res >> 1);
+		_putchar((res & 1) + '0');
 	}
-	rec(res >> 1);
-	_putchar((res & 1) + '0');
+	return;
+	
 }
 /**
  * print_binary - isdigit
