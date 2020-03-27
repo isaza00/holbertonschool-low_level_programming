@@ -13,10 +13,7 @@ void rec(int res)
 		return;
 	}
 	rec(res >> 1);
-	if (res & 1)
-		_putchar('1');
-	else
-		_putchar('0');
+	_putchar((res & 1) + '0');
 }
 /**
  * print_binary - isdigit
