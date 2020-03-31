@@ -2,6 +2,8 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 #include <unistd.h>
+#include <stdio.h>
+#include <stdlib.h>
 #include "holberton.h"
 /**
  * read_textfile - isdigit
