@@ -41,8 +41,17 @@ void copy_file_to_file(const char *file_from, const char *file_to)
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 			exit(99);
 		}
-	} close(ff);
-	close(ft);
+	}
+	if (close(ff) < 0)
+	{
+		dprintf(STDERR_FILENO, "Error : Can't close fd %d\n", ff);
+		exit(100);
+	}
+	if (close(ft) < 0)
+	{
+		dprintf(STDERR_FILENO, "Error : Can't close fd %d\n", ft);
+		exit(100);
+	}
 }
 /**
  * main - copy content of a file to another file.
@@ -51,12 +60,12 @@ void copy_file_to_file(const char *file_from, const char *file_to)
  * Return: Always 0.
  */
 int main(int ac, char **av)
-{
-	if (ac != 3)
 	{
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-		exit(97);
+		if (ac != 3)
+		{
+			dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+			exit(97);
+		}
+		copy_file_to_file(av[1], av[2]);
+		return (0);
 	}
-	copy_file_to_file(av[1], av[2]);
-	return (0);
-}
