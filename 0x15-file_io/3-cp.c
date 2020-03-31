@@ -13,7 +13,7 @@
  */
 void copy_file_to_file(const char *file_from, const char *file_to)
 {
-	int ff, rff, ft, wft;
+	int ff = 0, rff = 0, ft = 0, wft = 0;
 	char buffer[1024];
 
 	ff = open(file_from, O_RDONLY);
@@ -60,12 +60,12 @@ void copy_file_to_file(const char *file_from, const char *file_to)
  * Return: Always 0.
  */
 int main(int ac, char **av)
+{
+	if (ac != 3)
 	{
-		if (ac != 3)
-		{
-			dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
-			exit(97);
-		}
-		copy_file_to_file(av[1], av[2]);
-		return (0);
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
 	}
+	copy_file_to_file(av[1], av[2]);
+	return (0);
+}
