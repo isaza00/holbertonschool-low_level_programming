@@ -32,13 +32,13 @@ void copy_file_to_file(const char *file_from, const char *file_to)
 		rff = read(ff, buffer, 1024);
 		if (rff < 0)
 		{
-			dprintf(STDERR_FILEN, "Error : Can't read from file %s\n", file_from);
+			dprintf(STDERR_FILENO, "Error : Can't read from file %s\n", file_from);
 			exit(98);
 		}
 		wft = write(ft, buffer, rff);
 		if (wft < 0)
 		{
-			dprintf(STDERR_FILEN, "Error: Can't write to %s\n", file_to);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 			exit(99);
 		}
 	} close(ff);
@@ -54,7 +54,7 @@ int main(int ac, char **av)
 {
 	if (ac != 3)
 	{
-		dprintf(STDERR_FILEN, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 	copy_file_to_file(av[1], av[2]);
