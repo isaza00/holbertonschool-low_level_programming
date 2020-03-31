@@ -28,12 +28,9 @@ int append_text_to_file(const char *filename, char *text_content)
 	{
 		return (-1);
 	}
-	if (text_content)
-	{
-		sz = write(fd, text_content, len);
-		if (sz < 0)
-			return (-1);
-	}
+	sz = write(fd, text_content, len);
+	if (sz < 0)
+		return (-1);
 	close(fd);
 	return (1);
 }
