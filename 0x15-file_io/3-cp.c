@@ -12,7 +12,7 @@
  * Return: prints alphabet
  */
 void copy_file_to_file(const char *file_from, const char *file_to)
-{	int ff = 0, rff = 1, ft = 0, wft = 0;
+{	int ff = -1, rff = 1, ft = -1, wft = 0;
 	char buffer[1024];
 
 	ff = open(file_from, O_RDONLY);
@@ -69,5 +69,6 @@ int main(int ac, char **av)
 		exit(97);
 	}
 	copy_file_to_file(av[1], av[2]);
+	exit (0);
 	return (0);
 }
