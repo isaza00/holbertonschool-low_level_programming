@@ -18,7 +18,7 @@ void copy_file_to_file(const char *file_from, const char *file_to)
 	ff = open(file_from, O_RDONLY);
 	if (ff < 0)
 	{
-		dprintf(STDERR_FILENO, "Error : Can't read from file %s\n", file_from);
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 		exit(98);
 	} ft = open(file_to, O_WRONLY | O_TRUNC | O_CREAT, 0664);
 	if (ft < 0)
@@ -30,7 +30,7 @@ void copy_file_to_file(const char *file_from, const char *file_to)
 		rff = read(ff, buffer, 1024);
 		if (rff < 0)
 		{
-			dprintf(STDERR_FILENO, "Error : Can't read from file %s\n", file_from);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", file_from);
 			exit(98);
 		}
 		if (rff > 0)
@@ -45,12 +45,12 @@ void copy_file_to_file(const char *file_from, const char *file_to)
 	} while (rff > 0);
 	if (close(ff) < 0)
 	{
-		dprintf(STDERR_FILENO, "Error : Can't close fd %d\n", ff);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", ff);
 		exit(100);
 	}
 	if (close(ft) < 0)
 	{
-		dprintf(STDERR_FILENO, "Error : Can't close fd %d\n", ft);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", ft);
 		exit(100);
 	}
 }
