@@ -26,8 +26,8 @@ void copy_file_to_file(const char *file_from, const char *file_to)
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
-	while (rff > 0)
-	{	rff = read(ff, buffer, 1024);
+	do {
+		rff = read(ff, buffer, 1024);
 		if (rff < 0)
 		{
 			dprintf(STDERR_FILENO, "Error : Can't read from file %s\n", file_from);
@@ -42,7 +42,7 @@ void copy_file_to_file(const char *file_from, const char *file_to)
 				exit(99);
 			}
 		}
-	}
+	} while (rff > 0);
 	if (close(ff) < 0)
 	{
 		dprintf(STDERR_FILENO, "Error : Can't close fd %d\n", ff);
