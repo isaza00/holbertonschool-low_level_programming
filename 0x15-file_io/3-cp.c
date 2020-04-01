@@ -12,8 +12,7 @@
  * Return: prints alphabet
  */
 void copy_file_to_file(const char *file_from, const char *file_to)
-{
-	int ff = 0, rff = 0, ft = 0, wft = 0;
+{	int ff = 0, rff = 1, ft = 0, wft = 0;
 	char buffer[1024];
 
 	ff = open(file_from, O_RDONLY);
@@ -21,25 +20,27 @@ void copy_file_to_file(const char *file_from, const char *file_to)
 	{
 		dprintf(STDERR_FILENO, "Error : Can't read from file %s\n", file_from);
 		exit(98);
-	} ft = open(file_to, O_CREAT | O_RDWR | O_TRUNC, 0664);
+	} ft = open(file_to, O_CREAT | O_WRONLY | O_TRUNC, 0664);
 	if (ft < 0)
 	{
 		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 		exit(99);
 	}
 	while (rff > 0)
-	{
-		rff = read(ff, buffer, 1024);
+	{	rff = read(ff, buffer, 1024);
 		if (rff < 0)
 		{
 			dprintf(STDERR_FILENO, "Error : Can't read from file %s\n", file_from);
 			exit(98);
 		}
-		wft = write(ft, buffer, rff);
-		if (wft < 0)
+		if (rff > 0)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
-			exit(99);
+			wft = write(ft, buffer, rff);
+			if (wft < 0)
+			{
+				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
+				exit(99);
+			}
 		}
 	}
 	if (close(ff) < 0)
@@ -53,6 +54,7 @@ void copy_file_to_file(const char *file_from, const char *file_to)
 		exit(100);
 	}
 }
+
 /**
  * main - copy content of a file to another file.
  * @ac: integer
