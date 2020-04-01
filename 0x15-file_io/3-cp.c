@@ -69,6 +69,6 @@ int main(int ac, char **av)
 		exit(97);
 	}
 	copy_file_to_file(av[1], av[2]);
-	exit (0);
+	exit(0);
 	return (0);
 }
