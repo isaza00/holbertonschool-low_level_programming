@@ -36,7 +36,7 @@ void copy_file_to_file(const char *file_from, const char *file_to)
 		if (rff > 0)
 		{
 			wft = write(ft, buffer, rff);
-			if (wft < 0)
+			if (wft != rff)
 			{
 				dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file_to);
 				exit(99);
