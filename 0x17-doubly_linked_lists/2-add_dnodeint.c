@@ -3,7 +3,7 @@
 #include "lists.h"
 /**
  * add_dnodeint - add node at begining of double linked list
- * @h: pointer to hed
+ * @head: pointer to hed
  * @n: integer
  * Return: number of nodes
  */

@@ -3,8 +3,7 @@
 #include "lists.h"
 /**
  * free_dlistint - free nodes of double linked list
- * @h: pointer to head
- * @n: integer
+ * @head: pointer to head
  * Return: does not return
  */
 void free_dlistint(dlistint_t *head)
@@ -16,7 +15,6 @@ void free_dlistint(dlistint_t *head)
 	{
 		aux = temp->next;
 		free(temp);
-		temp = aux;	
+		temp = aux;
 	}
 }
-

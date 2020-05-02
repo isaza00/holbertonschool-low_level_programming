@@ -2,8 +2,8 @@
 #include <stdlib.h>
 #include "lists.h"
 /**
- * add_dnodeend - add node at end of double linked list
- * @h: pointer to head
+ * add_dnodeint_end - add node at end of double linked list
+ * @head: pointer to head
  * @n: integer
  * Return: number address of new element
  */
@@ -24,9 +24,9 @@ dlistint_t *add_dnodeint_end(dlistint_t **head, const int n)
 		return (new);
 	}
 	while (temp->next)
-		temp = temp->next;	
+		temp = temp->next;
 	new->prev = temp;
-	temp->next = new;		
+	temp->next = new;
 
 	return (new);
 }
