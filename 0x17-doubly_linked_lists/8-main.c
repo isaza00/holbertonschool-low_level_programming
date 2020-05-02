@@ -21,10 +21,14 @@ int main(void)
     add_dnodeint_end(&head, 98);
     add_dnodeint_end(&head, 402);
     add_dnodeint_end(&head, 1024);
+    printf("lista al derecho: \n");
     print_dlistint(head);
     printf("-----------------\n");
-    delete_dnodeint_at_index(&head, 5);
+    delete_dnodeint_at_index(&head, 7);
+    printf("lista al derecho despues de borrar nodo: \n");
     print_dlistint(head);
+    printf("lista al reves despues de borrar nodo: \n");
+    print_rev_dlistint(head);
     printf("-----------------\n");
     delete_dnodeint_at_index(&head, 0);
     print_dlistint(head);
