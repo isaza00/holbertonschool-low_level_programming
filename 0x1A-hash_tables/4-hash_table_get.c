@@ -1,11 +1,12 @@
 #include "hash_tables.h"
 
 /**
- * hash_table_get -  return value for given key
+ * hash_table_get - get the value with given key
  * @ht: hash table to look up in
  * @key: given key
- * return: pointer to value
+ * Return: return a pointer to the value
  */
+
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
 	unsigned long int index;
