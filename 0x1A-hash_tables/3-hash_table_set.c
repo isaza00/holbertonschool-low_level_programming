@@ -16,23 +16,30 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 		return (0);
 	if (strcmp(key, "") == 0 || !key || !value)
 		return (0);
-	
 	index = key_index((unsigned char *)key, ht->size);
 
 	new_node = malloc(sizeof(hash_node_t));
 	if (!new_node)
 	{
-		free(ht->array); free(ht); return (0);
+		free(ht->array); 
+		free(ht); 
+		return (0);
 	}
 	new_node->key = malloc(sizeof(char) * (strlen(key)+1));
 	if (!new_node->key)
 	{
-		free(new_node); free(ht->array); free(ht); return (0);
+		free(new_node); 
+		free(ht->array); 
+		free(ht); 
+		return (0);
 	}
 	new_node->value = malloc(sizeof(char) * (strlen(value)+1));
 	if (!new_node->value)
 	{
-		free(new_node->key); free(new_node); free(ht->array); free(ht);
+		free(new_node->key); 
+		free(new_node); 
+		free(ht->array); 
+		free(ht);
 		return (0);
 	}
 	strcpy(new_node->key, key);
