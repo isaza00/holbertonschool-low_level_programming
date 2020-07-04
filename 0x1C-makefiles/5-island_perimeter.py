@@ -12,7 +12,7 @@ def island_perimeter(grid):
                     if grid[i-1][j]:
                         cont += 1
                 if j > 0:
-                    if grid[i][j-i]:
+                    if grid[i][j-1]:
                         cont += 1
                 if j < len(grid[i]) - 1:
                     if grid[i][j+1]:
