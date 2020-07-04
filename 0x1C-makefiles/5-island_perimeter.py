@@ -10,7 +10,7 @@ def island_perimeter(grid):
     if grid:
         for i in range(height):
             for j in range(width):
-                if grid[i][j] != 1:
+                if grid[i][j] == 0:
                     if i > 0:
                         if grid[i-1][j] == 1:
                             cont += 1
