@@ -5,12 +5,12 @@
 def island_perimeter(grid):
     """ return perimeter of a matrix """
     cont = 0
+    height = len(grid)
+    width = len(grid[0])
     if grid:
-        for i in range(len(grid)):
-            for j in range(len(grid[i])):
-                if grid[i][j] == 1:
-                    pass
-                else:
+        for i in range(height):
+            for j in range(width):
+                if grid[i][j] != 1:
                     if i > 0:
                         if grid[i-1][j] == 1:
                             cont += 1
